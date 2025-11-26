@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Calculator & Calendar — devrajgoswami</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Tools — Calculator & Calendar</h1>
+        <nav class="main-nav">
+          <button id="tab-calculator" class="tab active">Calculator</button>
+          <button id="tab-calendar" class="tab">Calendar</button>
+        </nav>
+        <div class="header-controls">
+          <button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme" class="theme-toggle">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="calculator" class="panel">
+        <h2>Calculator</h2>
+        <div class="calc-container two-column">
+          <div class="calc-column">
+            <div class="calc">
+            <input aria-label="display" id="display" class="display" readonly value="0">
+            <div class="keys">
+            <button data-action="clear" class="key wide">AC</button>
+            <button data-action="plusminus" class="key">±</button>
+            <button data-action="percent" class="key">%</button>
+
+            <button data-action="digit" data-value="7" class="key">7</button>
+            <button data-action="digit" data-value="8" class="key">8</button>
+            <button data-action="digit" data-value="9" class="key">9</button>
+            <button data-action="operator" data-value="/" class="key operator">÷</button>
+
+            <button data-action="digit" data-value="4" class="key">4</button>
+            <button data-action="digit" data-value="5" class="key">5</button>
+            <button data-action="digit" data-value="6" class="key">6</button>
+            <button data-action="operator" data-value="*" class="key operator">×</button>
+
+            <button data-action="digit" data-value="1" class="key">1</button>
+            <button data-action="digit" data-value="2" class="key">2</button>
+            <button data-action="digit" data-value="3" class="key">3</button>
+            <button data-action="operator" data-value="-" class="key operator">−</button>
+
+            <button data-action="digit" data-value="0" class="key wide">0</button>
+            <button data-action="digit" data-value="." class="key">.</button>
+            <button data-action="equals" class="key operator">=</button>
+            <button data-action="operator" data-value="+" class="key operator">+</button>
+          </div>
+        </div>
+          </div>
+
+          <!-- calculator history column (always visible on larger screens) -->
+          <aside id="calc-history" class="history-column">
+            <div class="history-header">
+              <h3>Last 10 computations</h3>
+              <div class="history-actions">
+                <button id="clear-history" class="key small">Clear</button>
+              </div>
+            </div>
+            <ol id="history-list" class="history-list" aria-live="polite"></ol>
+            <div id="history-empty" class="selected-info">No history yet — perform some calculations to populate this list.</div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="calendar" class="panel hidden">
+        <h2>Calendar</h2>
+        <div class="calendar">
+          <div id="calendar-view" class="calendar-panel">
+          <div class="cal-header">
+            <button id="prev-month" aria-label="Previous month">◀</button>
+            <div id="month-year"></div>
+            <button id="next-month" aria-label="Next month">▶</button>
+          </div>
+          <div class="cal-grid">
+            <div class="cal-weekdays"></div>
+            <div class="cal-days" id="cal-days"></div>
+          </div>
+          <div id="selected-date" class="selected-info" aria-live="polite"></div>
+          </div>
+
+            <!-- Internal calendar tabs have been removed -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">Created with ♥ — small demo: calculator + calendar</div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
